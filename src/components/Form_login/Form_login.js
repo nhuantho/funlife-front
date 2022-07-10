@@ -1,4 +1,4 @@
-import { Alert, Button, Checkbox, Form, Input } from 'antd';
+import {Button, Checkbox, Form, Input } from 'antd';
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import axios from 'axios'
@@ -20,7 +20,7 @@ const Form_login = () => {
   // lây dữ liệu khi nhập vào ô input
   const userNameChange = (event) => {
     const userName = event.target.value;
-    if(userName != '' ||  userName!= null) {
+    if(userName !== '' ||  userName!= null) {
         setInput({
             ...userInput,
             userName: userName, // set value
