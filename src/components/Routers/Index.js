@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Form_login from "../Form_login/Form_login";
-import Loading from "../Loading/Loading";
+import Home from "../Home/Home";
 
 export default function Index(){
     return(
@@ -8,7 +8,7 @@ export default function Index(){
         <Router>
           <div>
             <Routes>
-              <Route path="/" element={<Loading />} />
+              <Route path="/" element={<Home />} />
               <Route path="/login" element={<Form_login />} />
             </Routes>
           </div>
