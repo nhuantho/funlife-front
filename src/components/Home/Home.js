@@ -1,31 +1,67 @@
-import { Button, Image, Space } from 'antd';
-import 'antd/dist/antd.css';
+import {
+  CheckCircleOutlined,
+  ReadOutlined,
+  PicCenterOutlined,
+  SolutionOutlined
+} from '@ant-design/icons';
+import {Layout, Menu } from 'antd';
 import React, { useState } from 'react';
+import { useAppContext } from '../Routers/Index';
+import Posts from './Posts/Posts';
+import Psychologist from './Psychologist/Psychologist';
+const { Header, Content, Footer, Sider } = Layout;
+
+function getItem(label, key, icon, children) {
+  return {
+    key,
+    icon,
+    children,
+    label,
+  };
+}
 
 const Home = () => {
-  const [random, setRandom] = useState();
+  
+  const items = [
+      getItem('Bài viết chia sẻ', '1', <ReadOutlined />),
+      getItem('Chuyên gia tâm lý', '2', <SolutionOutlined />),
+      getItem('Trung tâm liên kết', '3', <PicCenterOutlined />),
+  ];
+
+  const CheckItem = ({ item, key, keyPath, selectedKeys}) => {
+    console.log(key);
+    setCheckKey(key);
+  }
+  const [checkKey, setCheckKey] = useState('1');
+  const [collapsed, setCollapsed] = useState(false);
   return (
-    <Space size={12}>
-      <Image
-        width={200}
-        src={`https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?${random}`}
-        placeholder={
-          <Image
-            preview={false}
-            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200"
-            width={200}
-          />
-        }
-      />
-      <Button
-        type="primary"
-        onClick={() => {
-          setRandom(Date.now());
-        }}
-      >
-        Reload
-      </Button>
-    </Space>
+    <Layout
+      style={{
+        minHeight: '100vh',
+      }}
+    >
+      <Sider theme='light' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+        <div className="logo" />
+        <Menu theme="light" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={CheckItem}/>
+      </Sider>
+      <Layout className="site-layout">
+        <Content
+          style={{
+            margin: '0 16px',
+          }}
+        >
+          {checkKey === '1' ? <Posts/> : checkKey === '2' ? <Psychologist/> : checkKey === '3' ? <Psychologist/> : null}
+         {/* {checkKey === '1' ? <Test/> : checkKey === '3' ? <Test1/> : checkKey === '4' ? <Test2/> : checkKey === '5' ? <Test3/> : checkKey === '6' ? <Test4/> : checkKey === '7' ? <Test5/> : null} */}
+        </Content>
+        {/* <Footer
+          style={{
+            textAlign: 'center',
+          }}
+        >
+          Ant Design ©2018 Created by Ant UED
+        </Footer> */}
+      </Layout>
+    </Layout>
   );
 };
 
