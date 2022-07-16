@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import "./Form_login.css"
 import { useAppContext } from '../Routers/Index';
 import swal from 'sweetalert';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
+// import "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css";
 
 const data = []
 
@@ -252,6 +254,62 @@ const Form_login = () => {
         </Form>
     </header>
     </div>
+    // --------------------
+  //   <div className="container">
+  //   {/* Outer Row */}
+  //   <div className="row justify-content-center">
+  //     <div className="col-xl-10 col-lg-12 col-md-9">
+  //       <div className="card o-hidden border-0 shadow-lg my-5">
+  //         <div className="card-body p-0">
+  //           {/* Nested Row within Card Body */}
+  //           <div className="row">
+  //             <div className="col-lg-6 d-none d-lg-block bg-login-image" />
+  //             <div className="col-lg-6">
+  //               <div className="p-5">
+  //                 <div className="text-center">
+  //                   <h1 className="h4 text-gray-900 mb-4">Welcome Back!</h1>
+  //                 </div>
+  //                 <form className="user">
+  //                   <div className="form-group" style={{ margin:10}}>
+  //                     <input style={{ margin:10}} type="email" className="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="User name" />
+  //                   </div>
+  //                   <div className="form-group" style={{ margin:10}}>
+  //                     <input style={{ margin:10}} type="password" className="form-control form-control-user" id="exampleInputPassword" placeholder="Password" />
+  //                   </div>
+  //                   <div className="form-group">
+  //                     <div style={{ margin:10}} className="custom-control custom-checkbox small">
+  //                       <input style={{ margin:10}} type="checkbox" className="custom-control-input" id="customCheck" />
+  //                       <label style={{ margin:10}} className="custom-control-label" htmlFor="customCheck">Remember
+  //                         Me</label>
+  //                     </div>
+  //                   </div >
+  //                   <a href="index.html"  className="btn btn-primary btn-user btn-block">
+  //                     Login
+  //                   </a>
+  //                   <hr />
+  //                   <a href="index.html" className="btn btn-google btn-user btn-block">
+  //                     <i className="fab fa-google fa-fw" /> Login with Google
+  //                   </a>
+  //                   <a href="index.html" className="btn btn-facebook btn-user btn-block">
+  //                     <i className="fab fa-facebook-f fa-fw" /> Login with Facebook
+  //                   </a>
+  //                 </form>
+  //                 <hr />
+  //                 <div className="text-center">
+  //                   <a className="small" href="forgot-password.html">Forgot Password?</a>
+  //                 </div>
+  //                 <div className="text-center">
+  //                   <a className="small" href="register.html">Create an Account!</a>
+  //                 </div>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // </div>
+  // -------------------
   );
 };
 

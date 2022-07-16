@@ -3,6 +3,15 @@ import 'antd/dist/antd.css';
 import "./Profile.css"
 import { Button, Checkbox, DatePicker, Form, Input, Select, Spin } from 'antd';
 import { useAppContext } from '../Routers/Index';
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  FormGroup,
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
 
 export default function Profile() {
   const {user} = useAppContext()
@@ -80,6 +89,8 @@ export default function Profile() {
         </Form>
       </header>
     </div>
+
+
   )
 }
 

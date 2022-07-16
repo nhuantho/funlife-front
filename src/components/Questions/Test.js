@@ -6,6 +6,7 @@ import CheckTest from './CheckTest';
 import { useAppContext } from '../Routers/Index';
 import { Button, Form } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { Container } from 'reactstrap';
 
 const data = {
     "code": "",
@@ -166,29 +167,31 @@ const Test = () => {
   }
 
   return (
-    <div style={{marginLeft: 30, marginTop: 30}}>
-    {loading === true ? <TestLoading/>:null}
-    <Form>
-    <p style={{color: "red"}}>*Lưu ý chỉ chọn đáp án 1 lần và chọn đủ đáp án để có kết quả chính xác!</p>
-    {
-      dataSource.questions.map((question, index) => {
-        return(
-          <CheckTest question={question} index={index} AddQA={AddQA}/>
-        );
-      })
-    }
-    <Form.Item
-    wrapperCol={{
-        offset: 8,
-        span: 16,
-    }}
-    style={{marginTop: 30}}
-    >
-    <Button onClick={() => Onclick(test)} type="primary" loading={loading}>Xem kết quả</Button>
-    
-    </Form.Item>
-    </Form>
-    </div>
+    <Container>
+      <div style={{marginLeft: 30, marginTop: 30}}>
+      {loading === true ? <TestLoading/>:null}
+      <Form>
+      <p style={{color: "red"}}>*Lưu ý chỉ chọn đáp án 1 lần và chọn đủ đáp án để có kết quả chính xác!</p>
+      {
+        dataSource.questions.map((question, index) => {
+          return(
+            <CheckTest question={question} index={index} AddQA={AddQA}/>
+          );
+        })
+      }
+      <Form.Item
+      wrapperCol={{
+          offset: 8,
+          span: 16,
+      }}
+      style={{marginTop: 30}}
+      >
+      <Button onClick={() => Onclick(test)} type="primary" loading={loading}>Xem kết quả</Button>
+      
+      </Form.Item>
+      </Form>
+      </div>
+    </Container>
   );
 };
 
